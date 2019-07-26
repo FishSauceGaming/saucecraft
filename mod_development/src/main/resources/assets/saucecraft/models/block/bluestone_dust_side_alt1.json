@@ -1,0 +1,6 @@
+{
+    "parent": "saucecraft:block/bluestone_dust_side_alt",
+    "textures": {
+        "line": "saucecraft:block/bluestone_dust_line1"
+    }
+}

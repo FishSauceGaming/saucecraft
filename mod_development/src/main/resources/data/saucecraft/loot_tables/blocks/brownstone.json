@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+	"name": "saucecraft:brownstone",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "saucecraft:brownstone"
+        }
+      ],
+      "conditions": [
+      ]
+    }
+  ]
+}

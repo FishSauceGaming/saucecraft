@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "saucecraft:coloredstone_comparator",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "saucecraft:coloredstone_comparator"
+        }
+      ],
+      "conditions": [
+      ]
+    }
+  ]
+}

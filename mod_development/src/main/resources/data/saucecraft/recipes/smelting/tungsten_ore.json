@@ -1,0 +1,10 @@
+    
+{
+  "type": "smelting",
+  "ingredient": {
+    "item": "saucecraft:tungsten_ore"
+  },
+  "result": "saucecraft:tungsten_ingot",
+  "experience": 0.75,
+  "cookingtime": 200
+}

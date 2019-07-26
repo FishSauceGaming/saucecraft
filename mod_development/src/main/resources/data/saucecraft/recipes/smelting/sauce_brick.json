@@ -1,0 +1,10 @@
+    
+{
+  "type": "smelting",
+  "ingredient": {
+    "item": "saucecraft:sauce_dust"
+  },
+  "result": "saucecraft:sauce_brick",
+  "experience": 0.25,
+  "cookingtime": 200
+}

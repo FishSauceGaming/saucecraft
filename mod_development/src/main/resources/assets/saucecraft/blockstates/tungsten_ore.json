@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": [
+            { "model": "saucecraft:block/tungsten_ore" }
+        ]
+    }
+}
