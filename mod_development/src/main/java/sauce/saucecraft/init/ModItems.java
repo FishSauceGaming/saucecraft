@@ -11,11 +11,14 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ObjectHolder;
 import sauce.saucecraft.Reference;
 import sauce.saucecraft.armor.ModArmorMaterial;
+import sauce.saucecraft.armor.PotionArmorItem;
 import sauce.saucecraft.blocks.BlockSauce;
 import sauce.saucecraft.entities.SauceEntities;
+import sauce.saucecraft.items.ItemDimChanger;
 import sauce.saucecraft.items.ItemEndStaff;
 import sauce.saucecraft.items.ItemFireStaff;
 import sauce.saucecraft.items.ItemLightningStaff;
+import sauce.saucecraft.items.ItemEndBag;
 import sauce.saucecraft.items.ItemSauceDust;
 import sauce.saucecraft.items.ItemTotemOfRecall;
 import sauce.saucecraft.items.ItemTungstenIngot;
@@ -27,6 +30,7 @@ import sauce.saucecraft.tools.ModShovelItem;
 import sauce.saucecraft.tools.ModSwordItem;
 
 
+
 @Mod.EventBusSubscriber(modid = Reference.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @ObjectHolder(Reference.MODID)
 public class ModItems {
@@ -35,6 +39,9 @@ public class ModItems {
     public static final Item sauce_dust = null;
     public static final Item piston_kit = null;
     public static final Item tungsten_ingot = null;
+    public static final Item speed_boots = null;
+    public static final Item water_helmet = null;
+    public static final Item jump_pants = null;
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
@@ -45,14 +52,19 @@ public class ModItems {
                 new ItemEndStaff(new ItemEndStaff.Properties().maxStackSize(1).group(ModCreativeTab.sauce).maxDamage(256)).setRegistryName(Reference.MODID, "end_staff"),
                 new ItemFireStaff(new ItemFireStaff.Properties().maxStackSize(1).group(ModCreativeTab.sauce).maxDamage(256)).setRegistryName(Reference.MODID, "fire_staff"),
                 new ItemLightningStaff(new ItemLightningStaff.Properties().maxStackSize(1).group(ModCreativeTab.sauce).maxDamage(256)).setRegistryName(Reference.MODID, "lightning_staff"),
+                new ItemEndBag(new ItemEndBag.Properties().maxStackSize(1).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "end_bag"),
                 new ItemSauceDust(new ItemSauceDust.Properties().maxStackSize(64).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "sauce_dust"),
                 new ItemTungstenIngot(new ItemTungstenIngot.Properties().maxStackSize(64).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "tungsten_ingot"),
+                new ItemDimChanger(new ItemDimChanger.Properties().maxStackSize(1).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "dim_changer"),
                 new Item(new Item.Properties().maxStackSize(64).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "piston_kit"),   
                 new Item(new Item.Properties().maxStackSize(64).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "sauce_brick"),
                 new ArmorItem(ModArmorMaterial.tungsten, EquipmentSlotType.HEAD, (new Item.Properties()).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "tungsten_helmet"),
                 new ArmorItem(ModArmorMaterial.tungsten, EquipmentSlotType.CHEST, (new Item.Properties()).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "tungsten_chestplate"),
                 new ArmorItem(ModArmorMaterial.tungsten, EquipmentSlotType.LEGS, (new Item.Properties()).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "tungsten_leggings"),
                 new ArmorItem(ModArmorMaterial.tungsten, EquipmentSlotType.FEET, (new Item.Properties()).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "tungsten_boots"),
+                new PotionArmorItem(ModArmorMaterial.speed, EquipmentSlotType.FEET, (new Item.Properties()).group(ModCreativeTab.sauce).maxDamage(1000)).setRegistryName(Reference.MODID, "speed_boots"),
+                new PotionArmorItem(ModArmorMaterial.speed, EquipmentSlotType.HEAD, (new Item.Properties()).group(ModCreativeTab.sauce).maxDamage(1000)).setRegistryName(Reference.MODID, "water_helmet"),
+                new PotionArmorItem(ModArmorMaterial.speed, EquipmentSlotType.LEGS, (new Item.Properties()).group(ModCreativeTab.sauce).maxDamage(1200)).setRegistryName(Reference.MODID, "jump_pants"),
                 new ModPickaxeItem(ModItemTier.tungsten, -2.8F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "tungsten_pickaxe"),
                 new ModSwordItem(ModItemTier.tungsten, 3, -2.4F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "tungsten_sword"),
                 new ModAxeItem(ModItemTier.tungsten, 6.0F, -3.1F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "tungsten_axe"),

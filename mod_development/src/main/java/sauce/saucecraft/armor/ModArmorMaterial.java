@@ -4,6 +4,7 @@ import java.util.function.Supplier;
 
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyLoadBase;
 import net.minecraft.util.SoundEvent;
@@ -15,7 +16,8 @@ import sauce.saucecraft.init.ModItems;
 
 public class ModArmorMaterial {
 	public static final IArmorMaterial tungsten = new ArmorMaterial(Reference.MODID + ":tungsten", 100, new int[] {4, 8, 10, 4}, 26, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F, () -> Ingredient.fromItems(ModItems.tungsten_ingot));
-			
+	public static final IArmorMaterial speed = new ArmorMaterial(Reference.MODID + ":speed", 50, new int[] {3, 5, 6, 4}, 26, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 3.0F, () -> Ingredient.fromItems(Items.SHULKER_SHELL));
+	
     private static class ArmorMaterial implements IArmorMaterial{
 
         private static final int[] Max_Damage_Array = new int[] {13,15,16,11};

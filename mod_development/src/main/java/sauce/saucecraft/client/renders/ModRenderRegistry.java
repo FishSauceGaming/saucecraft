@@ -4,7 +4,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import sauce.saucecraft.entities.CavemanEntity;
-import sauce.saucecraft.entities.LightningStaffEntity;
 import sauce.saucecraft.entities.MuscovyEntity;
 import sauce.saucecraft.entities.SauceSlimeEntity;
 

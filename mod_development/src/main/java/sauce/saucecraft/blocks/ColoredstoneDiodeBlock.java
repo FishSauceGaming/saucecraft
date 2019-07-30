@@ -250,7 +250,8 @@ public abstract class ColoredstoneDiodeBlock extends HorizontalBlock {
       this.notifyNeighbors(worldIn, pos, p_220082_1_);
    }
 
-   public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
+   @SuppressWarnings("deprecation")
+public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
       if (!isMoving && state.getBlock() != newState.getBlock()) {
          super.onReplaced(state, worldIn, pos, newState, isMoving);
          this.notifyNeighbors(worldIn, pos, state);

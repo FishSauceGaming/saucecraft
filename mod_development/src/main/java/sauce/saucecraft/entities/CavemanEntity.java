@@ -28,7 +28,6 @@ public class CavemanEntity extends CreatureEntity{
 		this.goalSelector.addGoal(0, new LookRandomlyGoal(this));
 	}
 	
-	
 	@Override
 	protected void registerAttributes() {
 		super.registerAttributes();

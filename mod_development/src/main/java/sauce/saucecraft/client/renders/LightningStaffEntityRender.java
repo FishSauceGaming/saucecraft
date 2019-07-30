@@ -1,12 +1,5 @@
 package sauce.saucecraft.client.renders;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.EntityRenderer;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.entity.SpriteRenderer;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
-import sauce.saucecraft.entities.LightningStaffEntity;
-
 /*	
 public class LightningStaffEntityRender implements IRenderFactory<LightningStaffEntity>{
 

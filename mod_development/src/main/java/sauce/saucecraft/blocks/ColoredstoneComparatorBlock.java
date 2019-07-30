@@ -27,6 +27,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.TickPriority;
 import net.minecraft.world.World;
 
+@SuppressWarnings("deprecation")
 public class ColoredstoneComparatorBlock extends ColoredstoneDiodeBlock implements ITileEntityProvider {
 	   public static final EnumProperty<ComparatorMode> MODE = BlockStateProperties.COMPARATOR_MODE;
 

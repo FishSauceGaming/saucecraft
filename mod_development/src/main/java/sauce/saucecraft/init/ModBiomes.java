@@ -1,10 +1,6 @@
 package sauce.saucecraft.init;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.provider.BiomeProviderType;
-import net.minecraft.world.gen.ChunkGeneratorType;
-import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.common.ModDimension;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,6 +12,7 @@ import sauce.saucecraft.world.biomes.ForestMountainsBiome;
 import sauce.saucecraft.world.biomes.LushPlainsBiome;
 import sauce.saucecraft.world.biomes.MinersParadiseBiome;
 import sauce.saucecraft.world.biomes.NetherLeakBiome;
+import sauce.saucecraft.world.biomes.VeryDarkForestBiome;
 
 
 @ObjectHolder(Reference.MODID)
@@ -26,6 +23,7 @@ public class ModBiomes
 	public static final Biome MINERS_PARADISE = null;
 	public static final Biome NETHERLEAK = null;
 	public static final Biome LUSH_PLAINS = null;
+	public static final Biome VERY_DARK_FOREST = null;
 	
 	@Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 	public static class RegistryEvents
@@ -39,7 +37,9 @@ public class ModBiomes
 				setup(new BloodlandsBiome(), "bloodlands"),
 				setup(new MinersParadiseBiome(), "miners_paradise"),
 				setup(new NetherLeakBiome(), "netherleak"),
-				setup(new LushPlainsBiome(), "lush_plains")
+				setup(new LushPlainsBiome(), "lush_plains"),
+				setup(new VeryDarkForestBiome(), "very_dark_forest")
+				
 			);
 			
 			System.out.println("Saucecraft biomes registered");
