@@ -30,7 +30,6 @@ public class BloodlandsBiome extends Biome{
 		  
 		  this.addStructure(Feature.MINESHAFT, new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL));
 	      this.addStructure(Feature.STRONGHOLD, IFeatureConfig.NO_FEATURE_CONFIG);
-	      this.addStructure(Feature.STRONGHOLD, IFeatureConfig.NO_FEATURE_CONFIG);
 	      this.addStructure(Feature.DESERT_PYRAMID, IFeatureConfig.NO_FEATURE_CONFIG);
 	      this.addStructure(Feature.VILLAGE, new VillageConfig("village/savanna/town_centers", 6));
 	      

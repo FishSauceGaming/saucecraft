@@ -12,6 +12,7 @@ import sauce.saucecraft.world.biomes.ForestMountainsBiome;
 import sauce.saucecraft.world.biomes.LushPlainsBiome;
 import sauce.saucecraft.world.biomes.MinersParadiseBiome;
 import sauce.saucecraft.world.biomes.NetherLeakBiome;
+import sauce.saucecraft.world.biomes.SauceBiome;
 import sauce.saucecraft.world.biomes.VeryDarkForestBiome;
 
 
@@ -24,6 +25,7 @@ public class ModBiomes
 	public static final Biome NETHERLEAK = null;
 	public static final Biome LUSH_PLAINS = null;
 	public static final Biome VERY_DARK_FOREST = null;
+	public static final Biome SAUCE_BIOME = null;
 	
 	@Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 	public static class RegistryEvents
@@ -38,7 +40,8 @@ public class ModBiomes
 				setup(new MinersParadiseBiome(), "miners_paradise"),
 				setup(new NetherLeakBiome(), "netherleak"),
 				setup(new LushPlainsBiome(), "lush_plains"),
-				setup(new VeryDarkForestBiome(), "very_dark_forest")
+				setup(new VeryDarkForestBiome(), "very_dark_forest"),
+				setup(new SauceBiome(), "sauce_biome")
 				
 			);
 			

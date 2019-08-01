@@ -1,9 +1,18 @@
 package sauce.saucecraft.world.dimensions.sauce;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.gen.OverworldGenSettings;
 
 public class SauceGenSettings extends OverworldGenSettings
 {
+	
+	private BlockPos spawnPos;
+	
+	public SauceGenSettings setSpawnPos(BlockPos pos) {
+	      this.spawnPos = pos;
+	      return this;
+	}
+	
 	public int getBiomeSize() 
 	{
 		return 3;
@@ -11,7 +20,7 @@ public class SauceGenSettings extends OverworldGenSettings
 	
 	public int getRiverSize() 
 	{
-		return 6;
+		return 1;
 	}
 	
 	public int func_202199_l() 
@@ -33,6 +42,10 @@ public class SauceGenSettings extends OverworldGenSettings
 	{
 		return 200.0D;
 	}
+	
+	public BlockPos getSpawnPos() {
+	      return this.spawnPos;
+	   }
 	
 	public double getDepthNoiseScaleExponent() 
 	{

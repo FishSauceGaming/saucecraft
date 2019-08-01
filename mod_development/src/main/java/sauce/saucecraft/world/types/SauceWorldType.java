@@ -15,9 +15,10 @@ import sauce.saucecraft.world.dimensions.sauce.SauceLayerUtil;
 
 public class SauceWorldType extends WorldType
 {
+	
 	public SauceWorldType() 
 	{
-		super("am_type");
+		super("sauce_type");
 	}
 
 	@Override

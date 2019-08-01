@@ -20,6 +20,7 @@ import sauce.saucecraft.blocks.GreenstoneWireBlock;
 import sauce.saucecraft.blocks.OrangestoneWireBlock;
 import sauce.saucecraft.blocks.PinkstoneWireBlock;
 import sauce.saucecraft.blocks.PurplestoneWireBlock;
+import sauce.saucecraft.blocks.SauceGrassBlock;
 import sauce.saucecraft.blocks.WhitestoneWireBlock;
 import sauce.saucecraft.blocks.YellowstoneWireBlock;
 
@@ -41,6 +42,7 @@ public class ModBlocks {
 	public static Block COLOREDSTONE_COMPARATOR = null;
 	public static Block TUNGSTEN_ORE = null;
 	public static Block SAUCE_BRICK = null;
+	public static Block SAUCE_GRASS_BLOCK = null;
 
 	
 	@SubscribeEvent
@@ -59,7 +61,9 @@ public class ModBlocks {
 				COLOREDSTONE_REPEATER = new ColoredstoneRepeaterBlock(Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0f, 0f).sound(SoundType.WOOD)).setRegistryName(Reference.MODID, "coloredstone_repeater"),
 				COLOREDSTONE_COMPARATOR = new ColoredstoneComparatorBlock(Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0f, 0f).sound(SoundType.WOOD)).setRegistryName(Reference.MODID, "coloredstone_comparator"),
 				TUNGSTEN_ORE = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(22.5F, 120.0F).sound(SoundType.STONE).harvestLevel(3).harvestTool(ToolType.PICKAXE)).setRegistryName(Reference.MODID, "tungsten_ore"),
-				SAUCE_BRICK = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)).setRegistryName(Reference.MODID, "sauce_bricks")
+				SAUCE_BRICK = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)).setRegistryName(Reference.MODID, "sauce_bricks"),
+				SAUCE_GRASS_BLOCK = new SauceGrassBlock(Block.Properties.create(Material.ORGANIC).tickRandomly().hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName(Reference.MODID, "sauce_grass_block")
+			
 				);	
 }
 

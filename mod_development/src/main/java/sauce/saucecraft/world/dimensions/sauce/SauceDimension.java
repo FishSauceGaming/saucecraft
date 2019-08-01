@@ -116,7 +116,7 @@ public class SauceDimension extends Dimension
    @Override
    public boolean hasSkyLight() 
    {
-	   return false;
+	   return true;
    }
 
    /**
@@ -158,6 +158,6 @@ public class SauceDimension extends Dimension
    @OnlyIn(Dist.CLIENT)
    public boolean doesXZShowFog(int x, int z) 
    {
-      return true;
+      return false;
    }
 }

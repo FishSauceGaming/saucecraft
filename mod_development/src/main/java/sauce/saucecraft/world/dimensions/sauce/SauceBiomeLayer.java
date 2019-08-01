@@ -17,7 +17,7 @@ public class SauceBiomeLayer implements IC0Transformer
 	public static ImmutableList<BiomeManager.BiomeEntry> getBiomesToGeneration()
 	{
         ArrayList<BiomeManager.BiomeEntry> list = new ArrayList<>();
-        list.add(new BiomeManager.BiomeEntry(ModBiomes.VERY_DARK_FOREST, 100));
+        list.add(new BiomeManager.BiomeEntry(ModBiomes.SAUCE_BIOME, 100));
         return ImmutableList.copyOf(list);
     }
 	

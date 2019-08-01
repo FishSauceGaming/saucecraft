@@ -22,7 +22,7 @@ public class SauceBiomeProvider extends BiomeProvider
 {
    private final Layer genBiomes;
    private final Layer biomeFactoryLayer;
-   private final Biome[] biomes = new Biome[]{ModBiomes.VERY_DARK_FOREST};
+   private final Biome[] biomes = new Biome[]{ModBiomes.SAUCE_BIOME};
 
    public SauceBiomeProvider(SauceBiomeProviderSettings settingsProvider) {
       WorldInfo worldinfo = settingsProvider.getWorldInfo();

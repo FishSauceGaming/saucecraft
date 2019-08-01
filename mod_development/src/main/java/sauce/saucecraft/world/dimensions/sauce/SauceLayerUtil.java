@@ -15,12 +15,9 @@ import net.minecraft.world.gen.layer.DeepOceanLayer;
 import net.minecraft.world.gen.layer.EdgeLayer;
 import net.minecraft.world.gen.layer.IslandLayer;
 import net.minecraft.world.gen.layer.Layer;
-import net.minecraft.world.gen.layer.MixRiverLayer;
 import net.minecraft.world.gen.layer.RareBiomeLayer;
 import net.minecraft.world.gen.layer.RemoveTooMuchOceanLayer;
-import net.minecraft.world.gen.layer.RiverLayer;
 import net.minecraft.world.gen.layer.SmoothLayer;
-import net.minecraft.world.gen.layer.StartRiverLayer;
 import net.minecraft.world.gen.layer.VoroniZoomLayer;
 import net.minecraft.world.gen.layer.ZoomLayer;
 import net.minecraft.world.gen.layer.traits.IAreaTransformer1;
@@ -65,19 +62,13 @@ public class SauceLayerUtil
 
 		int i = 8;
 		int j = i;
-		if (settings != null) 
-		{
-			j = settings.getRiverSize();
-		}
 
 		i = 3;
 
 		IAreaFactory<T> lvt_7_1_ = repeat(1000L, ZoomLayer.NORMAL, iareafactory, 0, contextFactory);
-		lvt_7_1_ = StartRiverLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(100L), lvt_7_1_);
 		IAreaFactory<T> lvt_8_1_ = worldTypeIn.getBiomeLayer(iareafactory, settings, contextFactory);
 		lvt_7_1_ = repeat(1000L, ZoomLayer.NORMAL, lvt_7_1_, 2, contextFactory);
 		lvt_7_1_ = repeat(1000L, ZoomLayer.NORMAL, lvt_7_1_, j, contextFactory);
-		lvt_7_1_ = RiverLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1L), lvt_7_1_);
 		lvt_7_1_ = SmoothLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), lvt_7_1_);
 		lvt_8_1_ = RareBiomeLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), lvt_8_1_);
 		for(int k = 0; k < i; ++k) 
@@ -89,9 +80,7 @@ public class SauceLayerUtil
 				lvt_8_1_ = ZoomLayer.NORMAL.apply((IExtendedNoiseRandom)contextFactory.apply((long)(1000L)), lvt_8_1_);
 			}
 		}
-
 		lvt_8_1_ = SmoothLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), lvt_8_1_);
-		lvt_8_1_ = MixRiverLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(100L), lvt_8_1_, lvt_7_1_);
 		IAreaFactory<T> iareafactory5 = VoroniZoomLayer.INSTANCE.apply(contextFactory.apply(10L), lvt_8_1_);
 		return ImmutableList.of(lvt_8_1_, iareafactory5, lvt_8_1_);
 	}

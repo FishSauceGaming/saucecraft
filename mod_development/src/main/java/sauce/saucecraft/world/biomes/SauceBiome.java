@@ -3,51 +3,45 @@ package sauce.saucecraft.world.biomes;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.IFeatureConfig;
-import net.minecraft.world.gen.feature.structure.MineshaftConfig;
-import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
-import net.minecraftforge.common.BiomeManager;
-import net.minecraftforge.common.BiomeManager.BiomeEntry;
-import net.minecraftforge.common.BiomeManager.BiomeType;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import sauce.saucecraft.entities.SauceEntities;
+import sauce.saucecraft.world.gen.features.SauceCraftBiomeFeatures;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 
-public class ForestMountainsBiome extends Biome{
+
+public class SauceBiome extends Biome{
 	
-	protected static final SurfaceBuilderConfig	FOREST_MOUNTAINS_SURFACE = new SurfaceBuilderConfig(Blocks.GRASS_BLOCK.getDefaultState(), Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState());
+	protected static final SurfaceBuilderConfig	SAUCE_SURFACE = new SurfaceBuilderConfig(Blocks.GRASS_BLOCK.getDefaultState(), Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState());
 	
-	@SuppressWarnings("static-access")
-	public ForestMountainsBiome(){
+	 @SuppressWarnings("static-access")
+	public SauceBiome(){
 		 
-		  super((new Biome.Builder()).surfaceBuilder(new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(SurfaceBuilder.DEFAULT, FOREST_MOUNTAINS_SURFACE)).precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(0.3F).scale(0.7F).temperature(0.7F).downfall(0.8F).waterColor(4159204).waterFogColor(329011).parent((String)null));
-		 
-		  this.addStructure(Feature.MINESHAFT, new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL));
-	      this.addStructure(Feature.STRONGHOLD, IFeatureConfig.NO_FEATURE_CONFIG);
-	      this.addStructure(Feature.STRONGHOLD, IFeatureConfig.NO_FEATURE_CONFIG);
+		  super((new Biome.Builder()).surfaceBuilder(new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(SurfaceBuilder.DEFAULT, SAUCE_SURFACE)).precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(0.5F).scale(.4F).temperature(10F).downfall(0F).waterColor(11641446).waterFogColor(11641446).parent((String)null));
+
 	      DefaultBiomeFeatures.addCarvers(this);
 	      DefaultBiomeFeatures.addStructures(this);
-	      DefaultBiomeFeatures.addLakes(this);
 	      DefaultBiomeFeatures.addMonsterRooms(this);
-	      DefaultBiomeFeatures.addDoubleFlowers(this);
+	      DefaultBiomeFeatures.addSprings(this);
+	      DefaultBiomeFeatures.addSedimentDisks(this);
 	      DefaultBiomeFeatures.addStoneVariants(this);
 	      DefaultBiomeFeatures.addOres(this);
-	      DefaultBiomeFeatures.addSedimentDisks(this);
-	      DefaultBiomeFeatures.addForestTrees(this);
-	      DefaultBiomeFeatures.addDefaultFlowers(this);
+	      DefaultBiomeFeatures.addDesertLakes(this);
+	      DefaultBiomeFeatures.addLakes(this);
+	      DefaultBiomeFeatures.addTaigaRocks(this);
 	      DefaultBiomeFeatures.addGrass(this);
-	      DefaultBiomeFeatures.addMushrooms(this);
-	      DefaultBiomeFeatures.addReedsAndPumpkins(this);
-	      DefaultBiomeFeatures.addSprings(this);
-	      DefaultBiomeFeatures.addFreezeTopLayer(this);
+	      DefaultBiomeFeatures.addSavannaTrees(this);
+	      SauceCraftBiomeFeatures.addCongealTopLayer(this);
+
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PIG, 10, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.CHICKEN, 10, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.COW, 8, 4, 4));
-	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.WOLF, 5, 4, 4));
 	      this.addSpawn(EntityClassification.AMBIENT, new Biome.SpawnListEntry(EntityType.BAT, 10, 8, 8));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SPIDER, 100, 4, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ZOMBIE, 95, 4, 4));
@@ -57,11 +51,13 @@ public class ForestMountainsBiome extends Biome{
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SLIME, 100, 4, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
-	      new BiomeManager().addBiome(BiomeType.WARM, new BiomeEntry(this, 10));
-	      new BiomeManager().addSpawnBiome(this);
+	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(SauceEntities.CAVEMAN_ENTITY, 5, 1, 5));
+	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(SauceEntities.SAUCESLIME_ENTITY, 100, 1, 2));
 	      
 	    }
-	
-	
 
+	 @OnlyIn(Dist.CLIENT)
+	   public int getGrassColor(BlockPos pos) {
+	      return 16748800;
+	   }
 }

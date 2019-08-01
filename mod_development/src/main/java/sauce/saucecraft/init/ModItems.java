@@ -86,7 +86,8 @@ public class ModItems {
                 createItemBlockForBlock(ModBlocks.COLOREDSTONE_REPEATER, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
                 createItemBlockForBlock(ModBlocks.COLOREDSTONE_COMPARATOR, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
                 createItemBlockForBlock(ModBlocks.TUNGSTEN_ORE, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
-                createItemBlockForBlock(ModBlocks.SAUCE_BRICK, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64))
+                createItemBlockForBlock(ModBlocks.SAUCE_BRICK, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCE_GRASS_BLOCK, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64))
         );
         System.out.println("Saucecraft items loaded");
         
