@@ -102,6 +102,8 @@ public class SauceDimension extends Dimension
          }
       }
    }
+   
+
 
    /**
     * Calculates the angle of sun and moon in the sky relative to a specified time (usually worldTime)
@@ -124,7 +126,7 @@ public class SauceDimension extends Dimension
     */
    public boolean isSurfaceWorld() 
    {
-      return false;
+      return true;
    }
 
    /**
