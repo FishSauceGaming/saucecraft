@@ -38,16 +38,6 @@ public class SauceTeleporterManager
                 }
                 if (foundBlock){
                     TeleporterSauce.changeDim(((ServerPlayerEntity) playerIn), otherWorldPos, SauceDimensionType.getDimensionType());
-                    BlockPos bp = new BlockPos(playerIn.posX, playerIn.posY-1, playerIn.posZ);
-                    BlockPos bpx1 = new BlockPos(playerIn.posX+1, playerIn.posY-1, playerIn.posZ);
-                    BlockPos bpz1 = new BlockPos(playerIn.posX, playerIn.posY-1, playerIn.posZ+1);
-                    BlockPos bpx2 = new BlockPos(playerIn.posX-1, playerIn.posY-1, playerIn.posZ);
-                    BlockPos bpz2 = new BlockPos(playerIn.posX, playerIn.posY-1, playerIn.posZ-1);
-                    worldIn.setBlockState(bp, Blocks.STONE.getDefaultState());
-                    worldIn.setBlockState(bpx1, Blocks.STONE.getDefaultState());
-                    worldIn.setBlockState(bpz1, Blocks.STONE.getDefaultState());
-                    worldIn.setBlockState(bpx2, Blocks.STONE.getDefaultState());
-                    worldIn.setBlockState(bpz2, Blocks.STONE.getDefaultState());
                 }
                 if (!foundBlock){
                     playerIn.sendMessage(new StringTextComponent("Couldn't find a block!"));
@@ -63,11 +53,31 @@ public class SauceTeleporterManager
                 BlockPos.MutableBlockPos mutableBlockPos = new BlockPos.MutableBlockPos(0, 0, 0);
 
                 for (int y = 0; y < 256; y++) {
-                    for (int x = pos.getX() - 6; x < pos.getX() + 6; x++) {
-                        for (int z = pos.getZ() - 6; z < pos.getZ() + 6; z++) {
+                    for (int x = pos.getX() - 64; x < pos.getX() + 64; x++) {
+                        for (int z = pos.getZ() - 64; z < pos.getZ() + 64; z++) {
                             mutableBlockPos.setPos(x, y, z);
                             if (overWorld.getBlockState(mutableBlockPos).getBlock() == Blocks.GRASS) {
                                 overWorldPos = new BlockPos(x, y + 1, z);
+                                foundBlock = true;
+                                break;
+                            }
+                            else if (overWorld.getBlockState(mutableBlockPos).getBlock() == Blocks.STONE) {
+                            	overWorldPos = new BlockPos(x, y + 1, z);
+                                foundBlock = true;
+                                break;
+                            }
+                            else if (overWorld.getBlockState(mutableBlockPos).getBlock() == Blocks.SAND) {
+                            	overWorldPos = new BlockPos(x, y + 1, z);
+                                foundBlock = true;
+                                break;
+                            }
+                            else if (overWorld.getBlockState(mutableBlockPos).getBlock() == Blocks.MYCELIUM) {
+                            	overWorldPos = new BlockPos(x, y + 1, z);
+                                foundBlock = true;
+                                break;
+                            }
+                            else if (overWorld.getBlockState(mutableBlockPos).getBlock() == Blocks.DIRT) {
+                            	overWorldPos = new BlockPos(x, y + 1, z);
                                 foundBlock = true;
                                 break;
                             }

@@ -14,6 +14,7 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import sauce.saucecraft.client.renders.ModRenderRegistry;
 import sauce.saucecraft.init.ModDimensions;
+import sauce.saucecraft.init.VanillaCompatibility;
 import sauce.saucecraft.world.gen.OreGen;
 
 import org.apache.logging.log4j.LogManager;
@@ -48,6 +49,7 @@ public class SauceCraft
     {
     	OreGen.setupOreGeneration();
     	ModDimensions.registerDimensions();
+    	VanillaCompatibility.init();
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
     }

@@ -1,8 +1,10 @@
 package sauce.saucecraft.init;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.LogBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.DyeColor;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
@@ -20,7 +22,6 @@ import sauce.saucecraft.blocks.GreenstoneWireBlock;
 import sauce.saucecraft.blocks.OrangestoneWireBlock;
 import sauce.saucecraft.blocks.PinkstoneWireBlock;
 import sauce.saucecraft.blocks.PurplestoneWireBlock;
-import sauce.saucecraft.blocks.SauceGrassBlock;
 import sauce.saucecraft.blocks.WhitestoneWireBlock;
 import sauce.saucecraft.blocks.YellowstoneWireBlock;
 
@@ -42,8 +43,9 @@ public class ModBlocks {
 	public static Block COLOREDSTONE_COMPARATOR = null;
 	public static Block TUNGSTEN_ORE = null;
 	public static Block SAUCE_BRICK = null;
-	public static Block SAUCE_GRASS_BLOCK = null;
-
+	public static Block SAUCE_LOG = null;
+	public static Block SAUCE_PLANKS = null;
+	public static Block STRIPPED_SAUCE_LOG = null;
 	
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -62,9 +64,9 @@ public class ModBlocks {
 				COLOREDSTONE_COMPARATOR = new ColoredstoneComparatorBlock(Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0f, 0f).sound(SoundType.WOOD)).setRegistryName(Reference.MODID, "coloredstone_comparator"),
 				TUNGSTEN_ORE = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(22.5F, 120.0F).sound(SoundType.STONE).harvestLevel(3).harvestTool(ToolType.PICKAXE)).setRegistryName(Reference.MODID, "tungsten_ore"),
 				SAUCE_BRICK = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)).setRegistryName(Reference.MODID, "sauce_bricks"),
-				SAUCE_GRASS_BLOCK = new SauceGrassBlock(Block.Properties.create(Material.ORGANIC).tickRandomly().hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName(Reference.MODID, "sauce_grass_block")
-			
+				SAUCE_LOG = new LogBlock(MaterialColor.WOOD, Block.Properties.create(Material.WOOD, MaterialColor.OBSIDIAN).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName(Reference.MODID, "sauce_log"),
+				SAUCE_PLANKS = new Block(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)).setRegistryName(Reference.MODID, "sauce_planks"),
+				STRIPPED_SAUCE_LOG = new LogBlock(MaterialColor.OBSIDIAN, Block.Properties.create(Material.WOOD, MaterialColor.OBSIDIAN).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName(Reference.MODID, "stripped_sauce_log")
 				);	
-}
-
+	}
 }

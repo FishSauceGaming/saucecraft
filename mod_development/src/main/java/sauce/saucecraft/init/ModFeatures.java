@@ -10,17 +10,20 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.minecraftforge.registries.ObjectHolder;
 import sauce.saucecraft.Reference;
 import sauce.saucecraft.world.gen.features.CongealingSauceFeature;
+import sauce.saucecraft.world.gen.features.SauceTreeFeature;
 
 
 @ObjectHolder(Reference.MODID)
 public class ModFeatures 
 {
 	public static final Feature<NoFeatureConfig> CONGEAL = new CongealingSauceFeature(NoFeatureConfig::deserialize);
+	public static final Feature<NoFeatureConfig> SAUCETREE = new SauceTreeFeature(NoFeatureConfig::deserialize, false);
 	
 	@SubscribeEvent
     public static void registerFeatures(IForgeRegistry<Feature<?>> event) 
 	{
 		generic(event).add("congeal", CONGEAL);
+		generic(event).add("saucetree", SAUCETREE);	
 	}
 	
 	public static <T extends IForgeRegistryEntry<T>> Generic<T> generic(IForgeRegistry<T> registry) 

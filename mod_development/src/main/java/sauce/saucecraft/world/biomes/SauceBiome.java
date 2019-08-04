@@ -35,8 +35,8 @@ public class SauceBiome extends Biome{
 	      DefaultBiomeFeatures.addLakes(this);
 	      DefaultBiomeFeatures.addTaigaRocks(this);
 	      DefaultBiomeFeatures.addGrass(this);
-	      DefaultBiomeFeatures.addSavannaTrees(this);
 	      SauceCraftBiomeFeatures.addCongealTopLayer(this);
+	      SauceCraftBiomeFeatures.addSauceTree(this);
 
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PIG, 10, 4, 4));

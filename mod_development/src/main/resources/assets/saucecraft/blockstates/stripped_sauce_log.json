@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "saucecraft:block/stripped_sauce_log" },
+        "axis=z":   { "model": "saucecraft:block/stripped_sauce_log", "x": 90 },
+        "axis=x":   { "model": "saucecraft:block/stripped_sauce_log", "x": 90, "y": 90 }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "saucecraft:block/stripped_sauce_log_top",
+        "side": "saucecraft:block/stripped_sauce_log"
+    }
+}

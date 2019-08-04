@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+	"name": "saucecraft:stripped_sauce_log",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "saucecraft:stripped_sauce_log"
+        }
+      ],
+      "conditions": [
+      ]
+    }
+  ]
+}
