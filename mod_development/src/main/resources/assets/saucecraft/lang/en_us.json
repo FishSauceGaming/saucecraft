@@ -24,6 +24,9 @@
     "item.saucecraft.tungsten_shovel": "Tungsten Shovel",
     "item.saucecraft.tungsten_hoe": "Tungsten Hoe",
     "item.saucecraft.tungsten_sword": "Tungsten Sword",
+    "item.saucecraft.saucewood_sign": "Saucewood Sign",
+    
+    
     "block.saucecraft.sauce_block": "Hardened Sauce",
     "block.saucecraft.tungsten_ore": "Tungsten Ore",
     "block.saucecraft.sauce_bricks": "Sauce Bricks",
@@ -43,6 +46,20 @@
     "block.saucecraft.sauce_log": "Saucewood Log",
     "block.saucecraft.stripped_sauce_log": "Stripped Saucewood Log",
     "block.saucecraft.sauce_planks": "Saucewood Planks",
+    "block.saucecraft.saucewood_stairs": "Saucewood Stairs",
+    "block.saucecraft.saucewood_slab": "Saucewood Slab",
+    "block.saucecraft.saucewood_fence": "Saucewood Fence",
+    "block.saucecraft.saucewood_fence_gate": "Saucewood Fence Gate",
+    "block.saucecraft.saucewood_button": "Saucewood Button",
+    "block.saucecraft.saucewood_pressure_plate": "Saucewood Pressure Plate",
+    "block.saucecraft.saucewood_door": "Saucewood Door",
+    "block.saucecraft.saucewood_trapdoor": "Saucewood Trapdoor",
+    "block.saucecraft.saucewood_sign": "Saucewood Sign",
+    "block.saucecraft.saucewood_wall_sign": "Saucecraft Wall Sign",
+    "block.saucecraft.sauce_wood": "Sauce Wood",
+    "block.saucecraft.stripped_sauce_wood": "Stripped Sauce Wood",
+    
+    
     "biome.saucecraft.bloodlands": "Bloodlands",
     "biome.saucecraft.forest_mountains": "Forest Mountains",
     "biome.saucecraft.miners_paradise": "Miner's Paradise",
@@ -50,8 +67,12 @@
     "biome.saucecraft.lush_plains": "Lush Plains",
     "biome.saucecraft.very_dark_forest": "Very Dark Forest",
     "biome.saucecraft.sauce_biome": "The Saucelands",
+    
+    
     "entity.saucecraft.caveman_entity": "Caveman",
     "entity.saucecraft.muscovy_entity": "Muscovy",
     "entity.saucecraft.sauceslime_entity": "Sauce Slime",
+    
+    
     "itemGroup.saucecraft": "SauceCraft"
 }

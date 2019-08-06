@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "saucecraft:block/sauce_planks",
+        "top": "saucecraft:block/sauce_planks",
+        "side": "saucecraft:block/sauce_planks"
+    }
+}

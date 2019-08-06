@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "saucecraft:sauce_logs"
+    }
+  ],
+  "result": {
+    "item": "saucecraft:sauce_planks",
+    "count": 4
+  }
+}

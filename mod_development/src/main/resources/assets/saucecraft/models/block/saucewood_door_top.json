@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top",
+    "textures": {
+        "bottom": "saucecraft:block/saucewood_door_bottom",
+        "top": "saucecraft:block/saucewood_door_top"
+    }
+}

@@ -16,7 +16,16 @@ public class VanillaCompatibility {
         registerFlammableBlocks(ModBlocks.SAUCE_LOG, 5, 20);
         registerFlammableBlocks(ModBlocks.SAUCE_PLANKS, 5, 20);
         registerFlammableBlocks(ModBlocks.STRIPPED_SAUCE_LOG, 5, 20);
+        registerFlammableBlocks(ModBlocks.SAUCEWOOD_SLAB, 5, 20);
+        registerFlammableBlocks(ModBlocks.SAUCEWOOD_STAIRS, 5, 20);
+        registerFlammableBlocks(ModBlocks.SAUCEWOOD_FENCE, 5, 20);
+        registerFlammableBlocks(ModBlocks.SAUCEWOOD_FENCE_GATE, 5, 20);
+        registerFlammableBlocks(ModBlocks.SAUCEWOOD_DOOR, 5, 20);
+        registerFlammableBlocks(ModBlocks.SAUCEWOOD_TRAPDOOR, 5, 20);
+        registerFlammableBlocks(ModBlocks.SAUCE_WOOD, 5, 20);
+        registerFlammableBlocks(ModBlocks.STRIPPED_SAUCE_WOOD, 5, 20);
         registerStrippableBlocks(ModBlocks.SAUCE_LOG, ModBlocks.STRIPPED_SAUCE_LOG);
+        registerStrippableBlocks(ModBlocks.SAUCE_WOOD, ModBlocks.STRIPPED_SAUCE_WOOD);
     }
 
     public static void registerStrippableBlocks(Block log, Block stripped_log) {

@@ -3,6 +3,7 @@ package sauce.saucecraft.init;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
+import net.minecraft.item.SignItem;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BlockItem;
 import net.minecraftforge.event.RegistryEvent;
@@ -42,6 +43,7 @@ public class ModItems {
     public static final Item speed_boots = null;
     public static final Item water_helmet = null;
     public static final Item jump_pants = null;
+    public static final SignItem SAUCEWOOD_SIGN = null;
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
@@ -72,6 +74,8 @@ public class ModItems {
                 new ModHoeItem(ModItemTier.tungsten, -3.0F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "tungsten_hoe"),
                 
                 //Blocks
+                //new SignItem((new Item.Properties().maxStackSize(16).group(ModCreativeTab.sauce)), ModBlocks.SAUCEWOOD_SIGN, ModBlocks.SAUCEWOOD_WALL_SIGN).setRegistryName(Reference.MODID, "saucewood_sign"),
+                
                 createItemBlockForBlock(BlockSauce.sauce_block, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
                 createItemBlockForBlock(ModBlocks.bluestone_wire, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
                 createItemBlockForBlock(ModBlocks.greenstone_wire, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
@@ -85,11 +89,23 @@ public class ModItems {
                 createItemBlockForBlock(ModBlocks.blackstone_wire, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
                 createItemBlockForBlock(ModBlocks.COLOREDSTONE_REPEATER, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
                 createItemBlockForBlock(ModBlocks.COLOREDSTONE_COMPARATOR, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                
                 createItemBlockForBlock(ModBlocks.TUNGSTEN_ORE, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
                 createItemBlockForBlock(ModBlocks.SAUCE_BRICK, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                
                 createItemBlockForBlock(ModBlocks.SAUCE_LOG, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
                 createItemBlockForBlock(ModBlocks.SAUCE_PLANKS, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
-                createItemBlockForBlock(ModBlocks.STRIPPED_SAUCE_LOG, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64))
+                createItemBlockForBlock(ModBlocks.STRIPPED_SAUCE_LOG, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCEWOOD_STAIRS, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCEWOOD_SLAB, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCEWOOD_FENCE, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCEWOOD_FENCE_GATE, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCEWOOD_BUTTON, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCEWOOD_PRESSURE_PLATE, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCEWOOD_DOOR, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCEWOOD_TRAPDOOR, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCE_WOOD, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.STRIPPED_SAUCE_WOOD, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64))
         );
         System.out.println("Saucecraft items loaded");
         

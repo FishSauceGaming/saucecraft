@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "saucecraft:block/saucewood_pressure_plate" },
+        "powered=true": { "model": "saucecraft:block/saucewood_pressure_plate_down" }
+    }
+}
