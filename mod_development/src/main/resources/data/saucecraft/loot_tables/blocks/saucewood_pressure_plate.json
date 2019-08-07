@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+	"name": "saucecraft:saucewood_pressure_plate",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "saucecraft:saucewood_pressure_plate"
+        }
+      ],
+      "conditions": [
+      ]
+    }
+  ]
+}

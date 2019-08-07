@@ -24,6 +24,7 @@ public class VanillaCompatibility {
         registerFlammableBlocks(ModBlocks.SAUCEWOOD_TRAPDOOR, 5, 20);
         registerFlammableBlocks(ModBlocks.SAUCE_WOOD, 5, 20);
         registerFlammableBlocks(ModBlocks.STRIPPED_SAUCE_WOOD, 5, 20);
+        registerFlammableBlocks(ModBlocks.SAUCE_LEAVES, 30, 60);
         registerStrippableBlocks(ModBlocks.SAUCE_LOG, ModBlocks.STRIPPED_SAUCE_LOG);
         registerStrippableBlocks(ModBlocks.SAUCE_WOOD, ModBlocks.STRIPPED_SAUCE_WOOD);
     }

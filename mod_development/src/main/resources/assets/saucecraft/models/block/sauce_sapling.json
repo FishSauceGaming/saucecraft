@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "saucecraft:block/sauce_sapling"
+    }
+}

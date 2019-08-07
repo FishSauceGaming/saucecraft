@@ -18,8 +18,6 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ItemEndBag extends Item{
 
@@ -39,8 +37,8 @@ public class ItemEndBag extends Item{
 		BlockPos pos = playerIn.getPosition();
 		TileEntity tileentity = worldIn.getTileEntity(pos);
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
+		playSound(worldIn, playerIn, SoundEvents.BLOCK_ENDER_CHEST_OPEN);
 		if(!worldIn.isRemote) {
-			playSound(worldIn, playerIn, SoundEvents.BLOCK_ENDER_CHEST_OPEN);
 			EnderChestTileEntity enderchesttileentity = (EnderChestTileEntity)tileentity;
 		    enderchestinventory.setChestTileEntity(enderchesttileentity);
 		    playerIn.openContainer(new SimpleNamedContainerProvider((p_220114_1_, p_220114_2_, p_220114_3_) -> {
@@ -52,9 +50,6 @@ public class ItemEndBag extends Item{
 		return new ActionResult<>(ActionResultType.SUCCESS, itemstack);
 	}
 	
-	
-	
-	@OnlyIn(Dist.CLIENT)
 	public static void playSound(World worldIn, PlayerEntity playerIn, SoundEvent soundevent){
 		
 		int x = playerIn.getPosition().getX();

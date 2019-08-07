@@ -6,7 +6,6 @@ import java.util.function.Function;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.IWorldWriter;
@@ -16,8 +15,9 @@ import net.minecraft.world.gen.feature.NoFeatureConfig;
 import sauce.saucecraft.init.ModBlocks;
 
 public class SauceTreeFeature  extends AbstractTreeFeature<NoFeatureConfig> {
+	
 	   private static final BlockState TRUNK = ModBlocks.SAUCE_LOG.getDefaultState();
-	   private static final BlockState LEAF = Blocks.OAK_LEAVES.getDefaultState();
+	   private static final BlockState LEAF = ModBlocks.SAUCE_LEAVES.getDefaultState();
 
 	   public SauceTreeFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i51443_1_, boolean p_i51443_2_) {
 	      super(p_i51443_1_, p_i51443_2_);

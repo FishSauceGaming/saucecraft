@@ -126,7 +126,7 @@ public class SauceDimension extends Dimension
     */
    public boolean isSurfaceWorld() 
    {
-      return true;
+      return false;
    }
 
    /**
@@ -151,7 +151,7 @@ public class SauceDimension extends Dimension
     */
    public boolean canRespawnHere() 
    {
-      return true;
+      return false;
    }
 
    /**

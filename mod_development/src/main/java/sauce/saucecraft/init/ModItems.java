@@ -30,8 +30,6 @@ import sauce.saucecraft.tools.ModPickaxeItem;
 import sauce.saucecraft.tools.ModShovelItem;
 import sauce.saucecraft.tools.ModSwordItem;
 
-
-
 @Mod.EventBusSubscriber(modid = Reference.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @ObjectHolder(Reference.MODID)
 public class ModItems {
@@ -57,21 +55,30 @@ public class ModItems {
                 new ItemEndBag(new ItemEndBag.Properties().maxStackSize(1).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "end_bag"),
                 new ItemSauceDust(new ItemSauceDust.Properties().maxStackSize(64).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "sauce_dust"),
                 new ItemTungstenIngot(new ItemTungstenIngot.Properties().maxStackSize(64).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "tungsten_ingot"),
-                new ItemDimChanger(new ItemDimChanger.Properties().maxStackSize(1).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "dim_changer"),
+                new ItemDimChanger(new ItemDimChanger.Properties().maxStackSize(1).group(ModCreativeTab.sauce).maxDamage(2)).setRegistryName(Reference.MODID, "dim_changer"),
                 new Item(new Item.Properties().maxStackSize(64).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "piston_kit"),   
                 new Item(new Item.Properties().maxStackSize(64).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "sauce_brick"),
                 new ArmorItem(ModArmorMaterial.tungsten, EquipmentSlotType.HEAD, (new Item.Properties()).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "tungsten_helmet"),
                 new ArmorItem(ModArmorMaterial.tungsten, EquipmentSlotType.CHEST, (new Item.Properties()).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "tungsten_chestplate"),
                 new ArmorItem(ModArmorMaterial.tungsten, EquipmentSlotType.LEGS, (new Item.Properties()).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "tungsten_leggings"),
                 new ArmorItem(ModArmorMaterial.tungsten, EquipmentSlotType.FEET, (new Item.Properties()).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "tungsten_boots"),
-                new PotionArmorItem(ModArmorMaterial.speed, EquipmentSlotType.FEET, (new Item.Properties()).group(ModCreativeTab.sauce).maxDamage(1000)).setRegistryName(Reference.MODID, "speed_boots"),
+                new ArmorItem(ModArmorMaterial.emerald, EquipmentSlotType.HEAD, (new Item.Properties()).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "emerald_helmet"),
+                new ArmorItem(ModArmorMaterial.emerald, EquipmentSlotType.CHEST, (new Item.Properties()).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "emerald_chestplate"),
+                new ArmorItem(ModArmorMaterial.emerald, EquipmentSlotType.LEGS, (new Item.Properties()).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "emerald_leggings"),
+                new ArmorItem(ModArmorMaterial.emerald, EquipmentSlotType.FEET, (new Item.Properties()).group(ModCreativeTab.sauce)).setRegistryName(Reference.MODID, "emerald_boots"),
                 new PotionArmorItem(ModArmorMaterial.speed, EquipmentSlotType.HEAD, (new Item.Properties()).group(ModCreativeTab.sauce).maxDamage(1000)).setRegistryName(Reference.MODID, "water_helmet"),
                 new PotionArmorItem(ModArmorMaterial.speed, EquipmentSlotType.LEGS, (new Item.Properties()).group(ModCreativeTab.sauce).maxDamage(1200)).setRegistryName(Reference.MODID, "jump_pants"),
+                new PotionArmorItem(ModArmorMaterial.speed, EquipmentSlotType.FEET, (new Item.Properties()).group(ModCreativeTab.sauce).maxDamage(1000)).setRegistryName(Reference.MODID, "speed_boots"),
                 new ModPickaxeItem(ModItemTier.tungsten, -2.8F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "tungsten_pickaxe"),
                 new ModSwordItem(ModItemTier.tungsten, 3, -2.4F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "tungsten_sword"),
                 new ModAxeItem(ModItemTier.tungsten, 6.0F, -3.1F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "tungsten_axe"),
                 new ModShovelItem(ModItemTier.tungsten, 1.5F, -3.0F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "tungsten_shovel"),
                 new ModHoeItem(ModItemTier.tungsten, -3.0F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "tungsten_hoe"),
+                new ModPickaxeItem(ModItemTier.emerald, -2.8F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "emerald_pickaxe"),
+                new ModSwordItem(ModItemTier.emerald, 3, -2.4F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "emerald_sword"),
+                new ModAxeItem(ModItemTier.emerald, 6.0F, -3.1F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "emerald_axe"),
+                new ModShovelItem(ModItemTier.emerald, 1.5F, -3.0F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "emerald_shovel"),
+                new ModHoeItem(ModItemTier.emerald, -3.0F, (new Item.Properties().group(ModCreativeTab.sauce))).setRegistryName(Reference.MODID, "emerald_hoe"),               
                 
                 //Blocks
                 //new SignItem((new Item.Properties().maxStackSize(16).group(ModCreativeTab.sauce)), ModBlocks.SAUCEWOOD_SIGN, ModBlocks.SAUCEWOOD_WALL_SIGN).setRegistryName(Reference.MODID, "saucewood_sign"),
@@ -105,7 +112,12 @@ public class ModItems {
                 createItemBlockForBlock(ModBlocks.SAUCEWOOD_DOOR, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
                 createItemBlockForBlock(ModBlocks.SAUCEWOOD_TRAPDOOR, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
                 createItemBlockForBlock(ModBlocks.SAUCE_WOOD, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
-                createItemBlockForBlock(ModBlocks.STRIPPED_SAUCE_WOOD, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64))
+                createItemBlockForBlock(ModBlocks.STRIPPED_SAUCE_WOOD, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCE_LEAVES, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCE_SAPLING,new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCE_BRICK_SLAB, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCE_BRICK_STAIRS, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64)),
+                createItemBlockForBlock(ModBlocks.SAUCE_BRICK_WALL, new Item.Properties().group(ModCreativeTab.sauce).maxStackSize(64))
         );
         System.out.println("Saucecraft items loaded");
         

@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.DoorBlock;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
+import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.block.RotatedPillarBlock;
@@ -12,6 +13,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.StandingSignBlock;
 import net.minecraft.block.TrapDoorBlock;
+import net.minecraft.block.WallBlock;
 import net.minecraft.block.WallSignBlock;
 import net.minecraft.block.WoodButtonBlock;
 import net.minecraft.block.material.Material;
@@ -30,11 +32,13 @@ import sauce.saucecraft.blocks.ColoredstoneComparatorBlock;
 import sauce.saucecraft.blocks.ColoredstoneRepeaterBlock;
 import sauce.saucecraft.blocks.CyanstoneWireBlock;
 import sauce.saucecraft.blocks.GreenstoneWireBlock;
+import sauce.saucecraft.blocks.ModSaplingBlock;
 import sauce.saucecraft.blocks.OrangestoneWireBlock;
 import sauce.saucecraft.blocks.PinkstoneWireBlock;
 import sauce.saucecraft.blocks.PurplestoneWireBlock;
 import sauce.saucecraft.blocks.WhitestoneWireBlock;
 import sauce.saucecraft.blocks.YellowstoneWireBlock;
+import sauce.saucecraft.world.gen.features.SauceTree;
 
 @Mod.EventBusSubscriber(modid = Reference.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 @ObjectHolder(Reference.MODID)
@@ -54,7 +58,11 @@ public class ModBlocks {
 	public static Block COLOREDSTONE_COMPARATOR = null;
 	
 	public static Block TUNGSTEN_ORE = null;
+	
 	public static Block SAUCE_BRICK = null;
+	public static Block SAUCE_BRICK_SLAB = null;
+	public static Block SAUCE_BRICK_STAIRS = null;
+	public static Block SAUCE_BRICK_WALL = null;
 	
 	public static Block SAUCE_LOG = null;
 	public static Block SAUCE_PLANKS = null;
@@ -71,6 +79,8 @@ public class ModBlocks {
 	public static Block SAUCEWOOD_WALL_SIGN = null;
 	public static Block SAUCE_WOOD = null;
 	public static Block STRIPPED_SAUCE_WOOD = null;
+	public static Block SAUCE_LEAVES = null;
+	public static Block SAUCE_SAPLING = null;
 	
 	
 	@SubscribeEvent
@@ -93,7 +103,12 @@ public class ModBlocks {
 				
 				//GENERAL BLOCKS
 				TUNGSTEN_ORE = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(22.5F, 120.0F).sound(SoundType.STONE).harvestLevel(3).harvestTool(ToolType.PICKAXE)).setRegistryName(Reference.MODID, "tungsten_ore"),
+				
+				//SAUCE BRICK
 				SAUCE_BRICK = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)).setRegistryName(Reference.MODID, "sauce_bricks"),
+				SAUCE_BRICK_SLAB = new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)).setRegistryName(Reference.MODID, "sauce_brick_slab"),
+				SAUCE_BRICK_STAIRS = new StairsBlock(SAUCE_BRICK.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.ORANGE_TERRACOTTA).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)).setRegistryName(Reference.MODID, "sauce_brick_stairs"),
+				SAUCE_BRICK_WALL = new WallBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE)).setRegistryName(Reference.MODID, "sauce_brick_wall"),
 				
 				//SAUCE WOOD
 				SAUCE_LOG = new LogBlock(MaterialColor.WOOD, Block.Properties.create(Material.WOOD, MaterialColor.OBSIDIAN).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName(Reference.MODID, "sauce_log"),
@@ -110,7 +125,9 @@ public class ModBlocks {
 				SAUCEWOOD_SIGN = new StandingSignBlock(Block.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD)).setRegistryName(Reference.MODID, "saucewood_sign"),
 				SAUCEWOOD_WALL_SIGN = new WallSignBlock(Block.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD).lootFrom(SAUCEWOOD_SIGN)).setRegistryName(Reference.MODID, "saucewood_wall_sign"),
 				SAUCE_WOOD = new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName(Reference.MODID, "sauce_wood"),
-				STRIPPED_SAUCE_WOOD = new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName(Reference.MODID, "stripped_sauce_wood")
+				STRIPPED_SAUCE_WOOD = new RotatedPillarBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName(Reference.MODID, "stripped_sauce_wood"),
+				SAUCE_LEAVES = new LeavesBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.PLANT)).setRegistryName(Reference.MODID, "sauce_leaves"),
+				SAUCE_SAPLING = new ModSaplingBlock(new SauceTree(), Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT)).setRegistryName(Reference.MODID, "sauce_sapling")
 				);	
 	}
 }

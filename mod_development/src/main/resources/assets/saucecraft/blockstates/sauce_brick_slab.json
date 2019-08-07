@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "saucecraft:block/sauce_brick_slab" },
+        "type=top": { "model": "saucecraft:block/sauce_brick_slab_top" },
+        "type=double": { "model": "saucecraft:block/sauce_bricks" }
+    }
+}

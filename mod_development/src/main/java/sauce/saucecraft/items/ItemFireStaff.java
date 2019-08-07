@@ -12,8 +12,6 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ItemFireStaff extends Item{
 
@@ -23,8 +21,8 @@ public class ItemFireStaff extends Item{
 		
 	@Override
 	 public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-		
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
+        playSound(worldIn, playerIn);	
 		if(!worldIn.isRemote) {
 			itemstack.damageItem(1, playerIn, (p_220045_0_) -> {
 		         p_220045_0_.sendBreakAnimation(EquipmentSlotType.MAINHAND);
@@ -39,13 +37,11 @@ public class ItemFireStaff extends Item{
 			fireball2.accelerationY = look.y * 0.1;
 			fireball2.accelerationZ = look.z * 0.1;
 			worldIn.addEntity(fireball2);
-
-	        playSound(worldIn, playerIn);		
+	
 		}
 		return new ActionResult<>(ActionResultType.SUCCESS, itemstack);
 	}
 	
-	@OnlyIn(Dist.CLIENT)
 	public static void playSound(World worldIn, PlayerEntity playerIn){
 		
 		int x = playerIn.getPosition().getX();

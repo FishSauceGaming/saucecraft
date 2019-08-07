@@ -2,6 +2,7 @@ package sauce.saucecraft.tools;
 
 import java.util.function.Supplier;
 import net.minecraft.item.IItemTier;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyLoadBase;
 import net.minecraftforge.api.distmarker.Dist;
@@ -13,6 +14,8 @@ public class ModItemTier implements IItemTier {
 
 
    public static final IItemTier tungsten = new ModItemTier(Reference.MODID + ":tungsten", 4, 1800, 10.5F, 4.0F, 10,  () -> Ingredient.fromItems(ModItems.tungsten_ingot));
+   public static final IItemTier emerald = new ModItemTier(Reference.MODID + ":emerald", 3, 1064, 6.5F, 2.5F, 10,  () -> Ingredient.fromItems(Items.EMERALD));
+   
 
    private final int harvestLevel;
    public final String name;

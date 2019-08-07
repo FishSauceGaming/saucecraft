@@ -1,9 +1,11 @@
 package sauce.saucecraft.entities;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.ProjectileItemEntity;
 import net.minecraft.entity.projectile.ThrowableEntity;
 import net.minecraft.network.IPacket;
@@ -35,8 +37,10 @@ public class LightningStaffEntity extends ThrowableEntity{
 	protected void onImpact(RayTraceResult result) {
 		BlockPos pos = this.getPosition();
 		this.remove();
-		LightningBoltEntity lbe = new LightningBoltEntity(world, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), false);
-		lbe.setPosition((double)pos.getX(), (double)pos.getY(), (double)pos.getZ());	
+		Entity entity1 = this.getThrower();
+		LightningBoltEntity lbe = new LightningBoltEntity(world, (double)pos.getX()+ 0.5D, (double)pos.getY(), (double)pos.getZ()+ 0.5D, false);
+		lbe.setCaster((ServerPlayerEntity)entity1);
+		lbe.setPosition((double)pos.getX()+ 0.5D, (double)pos.getY(), (double)pos.getZ()+ 0.5D);	
 		this.world.addEntity(lbe);
 		ServerWorld world = (ServerWorld)this.world;
 		world.addLightningBolt(lbe);	

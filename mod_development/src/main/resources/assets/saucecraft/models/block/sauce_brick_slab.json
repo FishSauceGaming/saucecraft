@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "saucecraft:block/sauce_bricks",
+        "top": "saucecraft:block/sauce_bricks",
+        "side": "saucecraft:block/sauce_bricks"
+    }
+}

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "saucecraft:saucewood_slab"
+    "saucecraft:saucewood_slab",
+    "saucecraft:sauce_brick_slab"
   ]
 }

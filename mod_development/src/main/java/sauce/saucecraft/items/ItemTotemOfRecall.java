@@ -16,9 +16,6 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-
 
 public class ItemTotemOfRecall extends Item{
 	
@@ -35,7 +32,6 @@ public class ItemTotemOfRecall extends Item{
 		
 		if (!worldIn.isRemote) {
 			DimensionType dimType = playerIn.getSpawnDimension();
-			
 			
 			if (dimType != playerIn.dimension) {
 				playerIn.changeDimension(dimType);
@@ -108,17 +104,17 @@ public class ItemTotemOfRecall extends Item{
 		playerIn.addPotionEffect(new EffectInstance(Effects.REGENERATION,100,2));
 		playerIn.addPotionEffect(new EffectInstance(Effects.RESISTANCE,100,2));
 		playerIn.addPotionEffect(new EffectInstance(Effects.INSTANT_HEALTH,100,2));
-		
 		playRecallSound(worldIn, playerIn);
 		
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
-		playerIn.inventory.deleteStack(itemstack);
-	     
+		
+		if(!playerIn.abilities.isCreativeMode) {
+			playerIn.inventory.deleteStack(itemstack);
+		}
+		
 	    return new ActionResult<>(ActionResultType.SUCCESS, itemstack);
 	   }
 
-	
-	@OnlyIn(Dist.CLIENT)
 	public static void playRecallSound(World worldIn, PlayerEntity playerIn){
 		
 		int x = playerIn.getPosition().getX();
@@ -132,12 +128,11 @@ public class ItemTotemOfRecall extends Item{
 	public static void getValidSpawn(Block blockType, World worldIn, PlayerEntity playerIn, BlockPos spawnPos){
 		int ctr = 0;
 
-		Block blockType1 = blockType;
+		Block blockType1;
 		
-		do{
-			
+		do{	
 			BlockPos pos = new BlockPos(spawnPos.getX(), (spawnPos.getY() + ctr), spawnPos.getZ());
-			BlockPos pos1 = new BlockPos(spawnPos.getX(), (spawnPos.getY() + ctr) + 1, spawnPos.getZ());
+			BlockPos pos1 = new BlockPos(spawnPos.getX(), (spawnPos.getY() + ctr + 1), spawnPos.getZ());
 			blockType = worldIn.getBlockState(pos).getBlock();
 			blockType1 = worldIn.getBlockState(pos1).getBlock();
 			System.out.println(blockType1);

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "Y",
+    "Y"
+  ],
+  "key": {
+    "X": {
+      "tag": "forge:ingots/tungsten"
+    },
+    "Y": {
+      "item": "minecraft:stick"
+    }
+    
+  },
+  "result": {
+    "item": "saucecraft:tungsten_shovel"
+  }
+}
