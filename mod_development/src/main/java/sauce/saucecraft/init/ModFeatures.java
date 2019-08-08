@@ -1,10 +1,13 @@
 package sauce.saucecraft.init;
 
+import java.util.Locale;
+
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
+import sauce.saucecraft.world.gen.structures.igloo.IglooStructure;
+import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.registries.GameData;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.minecraftforge.registries.ObjectHolder;
@@ -18,13 +21,18 @@ public class ModFeatures
 {
 	public static final Feature<NoFeatureConfig> CONGEAL = new CongealingSauceFeature(NoFeatureConfig::deserialize);
 	public static final Feature<NoFeatureConfig> SAUCETREE = new SauceTreeFeature(NoFeatureConfig::deserialize, false);
+	public static final Structure<NoFeatureConfig> IGLOO =  new IglooStructure(NoFeatureConfig::deserialize);
 	
 	@SubscribeEvent
     public static void registerFeatures(IForgeRegistry<Feature<?>> event) 
 	{
-		generic(event).add("congeal", CONGEAL);
-		generic(event).add("saucetree", SAUCETREE);	
+		generic(event).add(new ResourceLocation(Reference.MODID, "congeal"), CONGEAL);
+		generic(event).add(new ResourceLocation(Reference.MODID, "saucetree"), SAUCETREE);	
+		generic(event).add(new ResourceLocation(Reference.MODID, "igloo2"), IGLOO);
+		Feature.STRUCTURES.put("Igloo1".toLowerCase(Locale.ROOT), IGLOO);
+
 	}
+	
 	
 	public static <T extends IForgeRegistryEntry<T>> Generic<T> generic(IForgeRegistry<T> registry) 
 	{
@@ -40,10 +48,9 @@ public class ModFeatures
 			this.registry = registry;
 		}
 
-		public Generic<T> add(String name, T entry) 
+		public Generic<T> add(ResourceLocation name, T entry) 
 		{
-			ResourceLocation registryName = GameData.checkPrefix(name, false);
-			entry.setRegistryName(registryName);
+			entry.setRegistryName(name);
 			this.registry.register(entry);
 			return this;
         }

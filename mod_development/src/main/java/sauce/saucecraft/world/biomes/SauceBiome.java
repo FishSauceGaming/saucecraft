@@ -10,8 +10,10 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import sauce.saucecraft.entities.SauceEntities;
+import sauce.saucecraft.init.ModFeatures;
 import sauce.saucecraft.world.gen.features.SauceCraftBiomeFeatures;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 
 
@@ -37,7 +39,8 @@ public class SauceBiome extends Biome{
 	      DefaultBiomeFeatures.addGrass(this);
 	      SauceCraftBiomeFeatures.addCongealTopLayer(this);
 	      SauceCraftBiomeFeatures.addSauceTree(this);
-
+	      this.addStructure(ModFeatures.IGLOO, IFeatureConfig.NO_FEATURE_CONFIG);
+	      
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PIG, 10, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.CHICKEN, 10, 4, 4));
