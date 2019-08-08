@@ -28,7 +28,7 @@ public class ModFeatures
 	{
 		generic(event).add(new ResourceLocation(Reference.MODID, "congeal"), CONGEAL);
 		generic(event).add(new ResourceLocation(Reference.MODID, "saucetree"), SAUCETREE);	
-		generic(event).add(new ResourceLocation(Reference.MODID, "igloo2"), IGLOO);
+		generic(event).add(new ResourceLocation(Reference.MODID, "igloo1"), IGLOO);
 		Feature.STRUCTURES.put("Igloo1".toLowerCase(Locale.ROOT), IGLOO);
 
 	}
