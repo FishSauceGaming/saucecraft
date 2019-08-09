@@ -13,7 +13,10 @@ import sauce.saucecraft.entities.SauceEntities;
 import sauce.saucecraft.init.ModFeatures;
 import sauce.saucecraft.world.gen.features.SauceCraftBiomeFeatures;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
+import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.IFeatureConfig;
+import net.minecraft.world.gen.placement.IPlacementConfig;
+import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 
 
@@ -39,7 +42,9 @@ public class SauceBiome extends Biome{
 	      DefaultBiomeFeatures.addGrass(this);
 	      SauceCraftBiomeFeatures.addCongealTopLayer(this);
 	      SauceCraftBiomeFeatures.addSauceTree(this);
-	      this.addStructure(ModFeatures.IGLOO, IFeatureConfig.NO_FEATURE_CONFIG);
+	      
+	      this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(ModFeatures.WATERSHEEP, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG));
+          this.addStructure(ModFeatures.WATERSHEEP, IFeatureConfig.NO_FEATURE_CONFIG);
 	      
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PIG, 10, 4, 4));
@@ -56,7 +61,7 @@ public class SauceBiome extends Biome{
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(SauceEntities.CAVEMAN_ENTITY, 5, 1, 5));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(SauceEntities.SAUCESLIME_ENTITY, 100, 1, 2));
-	      
+
 	    }
 
 	 @OnlyIn(Dist.CLIENT)

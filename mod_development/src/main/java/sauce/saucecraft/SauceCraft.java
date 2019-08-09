@@ -1,6 +1,7 @@
 package sauce.saucecraft;
 
 import net.minecraft.block.Block;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -12,11 +13,12 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.IForgeRegistry;
 import sauce.saucecraft.client.renders.ModRenderRegistry;
 import sauce.saucecraft.init.ModDimensions;
+import sauce.saucecraft.init.ModFeatures;
 import sauce.saucecraft.init.VanillaCompatibility;
 import sauce.saucecraft.world.gen.OreGen;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.stream.Collectors;
@@ -25,7 +27,6 @@ import java.util.stream.Collectors;
 @Mod(Reference.MODID)
 public class SauceCraft
 {
-	
 	
 	
     // Directly reference a log4j logger.
@@ -41,12 +42,14 @@ public class SauceCraft
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff); 
         
+        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Feature.class, this::onFeatureRegistry);
+        
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);    
     }
 
     private void setup(final FMLCommonSetupEvent event)
-    {
+    {	
     	OreGen.setupOreGeneration();
     	ModDimensions.registerDimensions();
     	VanillaCompatibility.init();
@@ -54,6 +57,13 @@ public class SauceCraft
         LOGGER.info("HELLO FROM PREINIT");
     }
 
+    @SubscribeEvent
+    public void onFeatureRegistry(final RegistryEvent.Register<Feature<?>> event) {
+        IForgeRegistry<Feature<?>> registry = event.getRegistry();
+
+        ModFeatures.registerFeatures(registry);
+    }
+    
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
@@ -65,6 +75,7 @@ public class SauceCraft
         // some example code to dispatch IMC to another mod
         InterModComms.sendTo("saucecraft", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
     }
+    
 
     private void processIMC(final InterModProcessEvent event)
     {
