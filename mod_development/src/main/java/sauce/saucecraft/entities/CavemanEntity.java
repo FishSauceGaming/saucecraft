@@ -6,9 +6,11 @@ import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorld;
@@ -26,6 +28,7 @@ public class CavemanEntity extends CreatureEntity{
 		this.goalSelector.addGoal(0, new SwimGoal(this));
 		this.goalSelector.addGoal(0, new RandomWalkingGoal(this, 0.5d));
 		this.goalSelector.addGoal(0, new LookRandomlyGoal(this));
+		this.goalSelector.addGoal(0, new AvoidEntityGoal<>(this, PlayerEntity.class, 20, 0.8D, 1.0D));
 	}
 	
 	@Override

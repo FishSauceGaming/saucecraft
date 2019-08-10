@@ -9,6 +9,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.Heightmap;
 import sauce.saucecraft.handlers.teleporter.TeleporterSauce;
+import sauce.saucecraft.items.ItemDimChanger;
 
 public class SauceTeleporterManager
 {
@@ -37,9 +38,11 @@ public class SauceTeleporterManager
                     }
                 }
                 if (foundBlock){
+                	ItemDimChanger.TrueOrFalse(true);
                     TeleporterSauce.changeDim(((ServerPlayerEntity) playerIn), otherWorldPos, SauceDimensionType.getDimensionType());
                 }
                 if (!foundBlock){
+                	ItemDimChanger.TrueOrFalse(false);
                     playerIn.sendMessage(new StringTextComponent("Couldn't find a block!"));
                 }
             }
@@ -85,9 +88,11 @@ public class SauceTeleporterManager
                     }
                 }
                 if (foundBlock){
+                	ItemDimChanger.TrueOrFalse(true);
                     TeleporterSauce.changeDim(((ServerPlayerEntity) playerIn), overWorldPos, DimensionType.OVERWORLD);
                 }
                 if (!foundBlock){
+                	ItemDimChanger.TrueOrFalse(false);
                     TeleporterSauce.changeDim(((ServerPlayerEntity) playerIn), overWorldPos, DimensionType.OVERWORLD);
                 }
             }

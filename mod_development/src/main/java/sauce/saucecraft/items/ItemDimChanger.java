@@ -17,16 +17,21 @@ public class ItemDimChanger extends Item{
 		super(properties);
 	}
 	
+	private static boolean tf;
+	
+	public static void TrueOrFalse(boolean TF) {
+		tf = TF;
+	}
 	
 	@Override
 	 public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
-		if(!worldIn.isRemote) {
+		SauceTeleporterManager.teleport(playerIn, worldIn, playerIn.getPosition());
+		if(!worldIn.isRemote && tf) {
 			itemstack.damageItem(1, playerIn, (p_220045_0_) -> {
 		         p_220045_0_.sendBreakAnimation(EquipmentSlotType.MAINHAND);
 		     });
 		}
-		SauceTeleporterManager.teleport(playerIn, worldIn, playerIn.getPosition());
 		return new ActionResult<>(ActionResultType.SUCCESS, itemstack);
 	}
 }

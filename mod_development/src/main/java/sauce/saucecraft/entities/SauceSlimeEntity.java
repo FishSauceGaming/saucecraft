@@ -8,7 +8,5 @@ public class SauceSlimeEntity extends SlimeEntity {
 
 	public SauceSlimeEntity(EntityType<? extends SlimeEntity> type, World worldIn) {
 		super(type, worldIn);
-	}
-	
-	
+	}	
 }
