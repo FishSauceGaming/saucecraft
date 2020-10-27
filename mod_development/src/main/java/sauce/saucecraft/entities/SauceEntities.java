@@ -17,7 +17,7 @@ import sauce.saucecraft.entities.LightningStaffEntity;
 public class SauceEntities {
 	
 	public static EntityType<?> CAVEMAN_ENTITY = EntityType.Builder.create(CavemanEntity::new, EntityClassification.MISC).build(Reference.MODID +":caveman_entity").setRegistryName(Reference.MODID, "caveman_entity");
-	public static EntityType<?> SAUCESLIME_ENTITY = EntityType.Builder.create(SauceSlimeEntity::new, EntityClassification.MONSTER).build(Reference.MODID +":sauceslime_entity").setRegistryName(Reference.MODID, "sauceslime_entity");
+	public static EntityType<?> SAUCESLIME_ENTITY = EntityType.Builder.create(SauceSlimeEntity::new, EntityClassification.CREATURE).build(Reference.MODID +":sauceslime_entity").setRegistryName(Reference.MODID, "sauceslime_entity");
 	public static EntityType<?> MUSCOVY_ENTITY = EntityType.Builder.create(MuscovyEntity::new, EntityClassification.AMBIENT).build(Reference.MODID + ":muscovy_entity").setRegistryName(Reference.MODID, "muscovy_entity");
 	public static EntityType<LightningStaffEntity> LIGHTNING_STAFF_ENTITY = EntityType.Builder.<LightningStaffEntity>create(EntityClassification.MISC).setCustomClientFactory(LightningStaffEntity::new).size(0.01f, 0.01f).build(Reference.MODID + "lightning_staff_entity");
 	public static Item CAVEMAN_ENTITY_EGG;
@@ -34,7 +34,7 @@ public class SauceEntities {
 	
 	public static void registerEntityWorldSpawns() {
 		registerEntityWorldSpawn(CAVEMAN_ENTITY, 5, 1, 5, ModBiomes.BLOODLANDS, Biomes.DESERT);
-		registerEntityWorldSpawn(SAUCESLIME_ENTITY, 5, 1, 2, ModBiomes.BLOODLANDS);
+		registerEntityWorldSpawn(SAUCESLIME_ENTITY, 5, 1, 2, ModBiomes.BLOODLANDS, ModBiomes.SAUCE_BIOME);
 		registerEntityWorldSpawn(MUSCOVY_ENTITY, 5, 1, 6, Biomes.BIRCH_FOREST, Biomes.BEACH, Biomes.FOREST, Biomes.PLAINS);
 	}
 	

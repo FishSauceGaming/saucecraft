@@ -13,12 +13,14 @@ import sauce.saucecraft.world.biomes.LushPlainsBiome;
 import sauce.saucecraft.world.biomes.MinersParadiseBiome;
 import sauce.saucecraft.world.biomes.NetherLeakBiome;
 import sauce.saucecraft.world.biomes.SauceBiome;
+import sauce.saucecraft.world.biomes.TropicalMountainsBiome;
 import sauce.saucecraft.world.biomes.VeryDarkForestBiome;
 
 
 @ObjectHolder(Reference.MODID)
 public class ModBiomes 
 {
+	public static final Biome TROPICAL_MOUNTAINS = null;
 	public static final Biome FOREST_MOUNTAINS = null;
 	public static final Biome BLOODLANDS = null;
 	public static final Biome MINERS_PARADISE = null;
@@ -35,6 +37,7 @@ public class ModBiomes
 		{
 			e.getRegistry().registerAll
 			(
+				setup(new TropicalMountainsBiome(), "tropical_mountains"),
 				setup(new ForestMountainsBiome(), "forest_mountains"),
 				setup(new BloodlandsBiome(), "bloodlands"),
 				setup(new MinersParadiseBiome(), "miners_paradise"),

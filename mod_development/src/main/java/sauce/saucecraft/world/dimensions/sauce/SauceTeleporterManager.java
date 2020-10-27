@@ -47,7 +47,6 @@ public class SauceTeleporterManager
                 }
             }
 
-            //FROM MINING DIM TO OVERWORLD
             if (worldIn.getDimension().getType() == SauceDimensionType.getDimensionType()) {
                 World overWorld = worldIn.getServer().getWorld(DimensionType.OVERWORLD);
                 overWorld.getBlockState(pos);

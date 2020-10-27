@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -44,54 +45,11 @@ public class ItemTotemOfRecall extends Item{
 			}
 			Block blockType = playerIn.world.getBlockState(spawnPos).getBlock();
 			
-			if (blockType == Blocks.BLACK_BED){
+
+			boolean bed = worldIn.getBlockState(playerIn.getBedLocation(dimType)).isIn(BlockTags.BEDS);
+			if (bed){
 				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.BLUE_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.BROWN_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.CYAN_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.GRAY_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.GREEN_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.LIGHT_BLUE_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.LIGHT_GRAY_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.LIME_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.MAGENTA_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.ORANGE_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.PINK_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.PURPLE_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.RED_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.WHITE_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
-			else if (blockType == Blocks.YELLOW_BED){
-				spawnPos = playerIn.getBedLocation(dimType);
-			}
+			}		
 			else {
 				spawnPos = worldIn.getSpawnPoint();
 			}

@@ -32,6 +32,7 @@ import sauce.saucecraft.blocks.ColoredstoneComparatorBlock;
 import sauce.saucecraft.blocks.ColoredstoneRepeaterBlock;
 import sauce.saucecraft.blocks.CyanstoneWireBlock;
 import sauce.saucecraft.blocks.GreenstoneWireBlock;
+import sauce.saucecraft.blocks.ModChestBlock;
 import sauce.saucecraft.blocks.ModSaplingBlock;
 import sauce.saucecraft.blocks.OrangestoneWireBlock;
 import sauce.saucecraft.blocks.PinkstoneWireBlock;
@@ -82,6 +83,8 @@ public class ModBlocks {
 	public static Block SAUCE_LEAVES = null;
 	public static Block SAUCE_SAPLING = null;
 	
+	public static Block CHEST_BLOCK = null;
+	
 	
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -104,6 +107,8 @@ public class ModBlocks {
 				//GENERAL BLOCKS
 				TUNGSTEN_ORE = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(22.5F, 120.0F).sound(SoundType.STONE).harvestLevel(3).harvestTool(ToolType.PICKAXE)).setRegistryName(Reference.MODID, "tungsten_ore"),
 				
+				CHEST_BLOCK = new ModChestBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5F).sound(SoundType.WOOD)).setRegistryName(Reference.MODID, "colored_chest"),
+
 				//SAUCE BRICK
 				SAUCE_BRICK = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)).setRegistryName(Reference.MODID, "sauce_bricks"),
 				SAUCE_BRICK_SLAB = new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)).setRegistryName(Reference.MODID, "sauce_brick_slab"),

@@ -24,28 +24,32 @@ public class SauceBiome extends Biome{
 	
 	protected static final SurfaceBuilderConfig	SAUCE_SURFACE = new SurfaceBuilderConfig(Blocks.GRASS_BLOCK.getDefaultState(), Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState());
 	
-	 @SuppressWarnings("static-access")
-	public SauceBiome(){
+	 public SauceBiome(){
 		 
 		  super((new Biome.Builder()).surfaceBuilder(new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(SurfaceBuilder.DEFAULT, SAUCE_SURFACE)).precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(0.5F).scale(.4F).temperature(10F).downfall(0F).waterColor(11641446).waterFogColor(11641446).parent((String)null));
 
 	      DefaultBiomeFeatures.addCarvers(this);
 	      DefaultBiomeFeatures.addStructures(this);
 	      DefaultBiomeFeatures.addMonsterRooms(this);
-	      DefaultBiomeFeatures.addSprings(this);
 	      DefaultBiomeFeatures.addSedimentDisks(this);
 	      DefaultBiomeFeatures.addStoneVariants(this);
 	      DefaultBiomeFeatures.addOres(this);
 	      DefaultBiomeFeatures.addDesertLakes(this);
-	      DefaultBiomeFeatures.addLakes(this);
 	      DefaultBiomeFeatures.addTaigaRocks(this);
 	      DefaultBiomeFeatures.addGrass(this);
+	      SauceCraftBiomeFeatures.addSauceLakes(this);
+	      SauceCraftBiomeFeatures.addSauceSprings(this);
+	      SauceCraftBiomeFeatures.addCongealTopLayer(this);
+	      SauceCraftBiomeFeatures.addCongealTopLayer(this);
+	      SauceCraftBiomeFeatures.addCongealTopLayer(this);
 	      SauceCraftBiomeFeatures.addCongealTopLayer(this);
 	      SauceCraftBiomeFeatures.addSauceTree(this);
 	      
+	      
 	      this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(ModFeatures.WATERSHEEP, IFeatureConfig.NO_FEATURE_CONFIG, Placement.NOPE, IPlacementConfig.NO_PLACEMENT_CONFIG));
           this.addStructure(ModFeatures.WATERSHEEP, IFeatureConfig.NO_FEATURE_CONFIG);
-	      
+          
+
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PIG, 10, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.CHICKEN, 10, 4, 4));
@@ -61,11 +65,10 @@ public class SauceBiome extends Biome{
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(SauceEntities.CAVEMAN_ENTITY, 5, 1, 5));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(SauceEntities.SAUCESLIME_ENTITY, 100, 1, 2));
-
 	    }
 
-	 @OnlyIn(Dist.CLIENT)
+	   @OnlyIn(Dist.CLIENT)
 	   public int getGrassColor(BlockPos pos) {
-	      return 16748800;
+		   return 16748800;
 	   }
 }

@@ -5,8 +5,11 @@ import net.minecraft.entity.monster.SlimeEntity;
 import net.minecraft.world.World;
 
 public class SauceSlimeEntity extends SlimeEntity {
-
-	public SauceSlimeEntity(EntityType<? extends SlimeEntity> type, World worldIn) {
+	
+	public SauceSlimeEntity(EntityType<? extends SlimeEntity> type, World worldIn) {		
 		super(type, worldIn);
-	}	
+	}
+	
+	
+
 }

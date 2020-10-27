@@ -1,4 +1,4 @@
-package sauce.saucecraft.world.gen.structures.test;
+package sauce.saucecraft.world.gen.structures;
 
 import com.google.common.collect.ImmutableMap;
 

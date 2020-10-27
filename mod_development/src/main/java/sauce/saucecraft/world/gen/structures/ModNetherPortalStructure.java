@@ -1,4 +1,4 @@
-package sauce.saucecraft.world.gen.structures.test;
+package sauce.saucecraft.world.gen.structures;
 
 import com.mojang.datafixers.Dynamic;
 import net.minecraft.util.Rotation;
@@ -19,8 +19,8 @@ import sauce.saucecraft.init.ModFeatures;
 import java.util.Random;
 import java.util.function.Function;
 
-public class WaterSheepStructure extends Structure<NoFeatureConfig> {
-    public WaterSheepStructure(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i51440_1_) {
+public class ModNetherPortalStructure extends Structure<NoFeatureConfig> {
+    public ModNetherPortalStructure(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i51440_1_) {
         super(p_i51440_1_);
     }
 
@@ -45,7 +45,7 @@ public class WaterSheepStructure extends Structure<NoFeatureConfig> {
         ChunkPos chunkpos = this.getStartPositionForPosition(chunkGen, rand, chunkPosX, chunkPosZ, 0, 0);
         if (chunkPosX == chunkpos.x && chunkPosZ == chunkpos.z) {
             Biome biome = chunkGen.getBiomeProvider().getBiome(new BlockPos(chunkPosX * 16 + 9, 0, chunkPosZ * 16 + 9));
-            if (chunkGen.hasStructure(biome, ModFeatures.WATERSHEEP)) {
+            if (chunkGen.hasStructure(biome, ModFeatures.NETHERPORTAL)) {
                 for (int k = chunkPosX - 10; k <= chunkPosX + 10; ++k) {
                     for (int l = chunkPosZ - 10; l <= chunkPosZ + 10; ++l) {
                         if (Feature.VILLAGE.hasStartAt(chunkGen, rand, k, l)) {
@@ -63,7 +63,7 @@ public class WaterSheepStructure extends Structure<NoFeatureConfig> {
     }
 
     public String getStructureName() {
-        return "WaterSheep";
+        return "ModNetherPortal";
     }
 
     public int getSize() {
@@ -71,7 +71,7 @@ public class WaterSheepStructure extends Structure<NoFeatureConfig> {
     }
 
     public Structure.IStartFactory getStartFactory() {
-        return WaterSheepStructure.Start::new;
+        return ModNetherPortalStructure.Start::new;
     }
     
     private static int getYPosForStructure(int chunkX, int chunkY, ChunkGenerator<?> generatorIn) {
@@ -121,7 +121,7 @@ public class WaterSheepStructure extends Structure<NoFeatureConfig> {
             
             if(y>=58) {
             	Rotation rotation = Rotation.values()[this.rand.nextInt(Rotation.values().length)];
-                WaterSheepPieces.addStructure(templateManagerIn, blockpos, rotation, this.components, this.rand);
+                ModNetherPortalPieces.addStructure(templateManagerIn, blockpos, rotation, this.components, this.rand);
                 this.recalculateStructureSize();
             }
         }

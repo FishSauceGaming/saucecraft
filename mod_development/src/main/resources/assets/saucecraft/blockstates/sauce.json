@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "saucecraft:block/sauce" }
+    }
+}
